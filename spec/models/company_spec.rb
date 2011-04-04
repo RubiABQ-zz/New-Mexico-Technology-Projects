@@ -11,6 +11,9 @@ describe Company do
       company.errors[:city].should be_present
     end
 
+    it "should create a company" do
+      expect {Company.create( :name => "ACME", :city => "Santa Fe")}.to change(Company, :count).by(1)
+    end
   end
 
   describe "associations" do
