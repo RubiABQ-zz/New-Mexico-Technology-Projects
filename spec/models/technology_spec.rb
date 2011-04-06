@@ -9,11 +9,18 @@ describe Technology do
   end
 
   describe "associations" do
+    before :each do
+      @technology = Factory(:technology)
+      @project = Factory(:project)
+      @project.technologies << @technology
+    end
+
     it "should have project" do
-      technology = Factory(:technology)
-      project = Factory(:project)
-      project.technologies << technology
-      technology.projects.first.should == project
+      @technology.projects.first.should == @project
+    end
+
+    it "should have companies" do
+      @technology.companies.include?(@project.company).should be_true
     end
   end
 end

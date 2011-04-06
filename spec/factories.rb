@@ -7,3 +7,7 @@ end
 Factory.define :project do |p|
   p.sequence(:name){|i| "Super cool smart cybernetic killing machine."}
 end
+
+Factory.define :technology do |p|
+  p.sequence(:name){|i| "Super cool smart cybernetic killing machine."}
+end
