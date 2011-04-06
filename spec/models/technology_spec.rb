@@ -12,6 +12,9 @@ describe Technology do
     before :each do
       @technology = Factory(:technology)
       @project = Factory(:project)
+      @company = Factory(:company)
+      @project.company = @company
+      @project.save
       @project.technologies << @technology
     end
 
@@ -20,7 +23,7 @@ describe Technology do
     end
 
     it "should have companies" do
-      @technology.companies.include?(@project.company).should be_true
+      @technology.companies.include?(@company).should be_true
     end
   end
 end
