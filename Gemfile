@@ -41,3 +41,7 @@ group :development do
   gem 'autotest-fsevent'
   gem 'autotest-growl'
 end
+
+group :test, :development do
+  gem 'webrat'
+end

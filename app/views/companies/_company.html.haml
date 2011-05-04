@@ -1,0 +1,6 @@
+%tr{:id => "company_#{company.id}"}
+  %td{:class => :name}= company.name
+  %td{:class => :actions}
+    %ul
+      %li= link_to 'Edit', edit_company_path(company)
+      %li= link_to 'Delete', company_path(company)
