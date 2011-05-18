@@ -10,9 +10,9 @@ describe "companies/index.html.haml" do
       render
       
       3.times.each do |i|
-        rendered.should have_selector 'tr', :id => "company_#{i}" # do |row|
-        #           row.should have_selector 'td.name', :text => "Company #{i}"
-        #         end
+        rendered.should have_selector 'tr', :id => "company_#{i}"  do |row|
+                   row.should have_selector 'td.name', :content => "Company #{i}"
+                 end
       end
     end
     

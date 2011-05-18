@@ -1,0 +1,9 @@
+= form_for @company do |f|
+  %p
+    = f.label :name, 'Name'
+    = f.text_field :name
+  %p
+    = f.label :name, 'City'
+    = f.text_field :city
+  %p= f.submit 'Create Company'
+
