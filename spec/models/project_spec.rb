@@ -6,13 +6,6 @@ describe Project do
       company = Project.create
       company.errors[:name].should be_present
     end
-
-    it "should have a company" do
-      project = Factory(:project)
-      company = Factory(:company, :projects => [project])
-      project.company.should_not be_nil
-      project.company.should == company
-    end
   end
 
   describe "associations" do
@@ -21,5 +14,13 @@ describe Project do
       project.technologies << Factory(:technology)
       project.technologies.should_not be_nil
     end
+
+    it "should have a company" do
+      project = Factory(:project)
+      company = Factory(:company, :projects => [project])
+      project.company.should_not be_nil
+      project.company.should == company
+    end
+
   end
 end

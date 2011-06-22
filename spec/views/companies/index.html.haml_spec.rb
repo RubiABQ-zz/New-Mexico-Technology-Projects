@@ -17,9 +17,10 @@ describe "companies/index.html.haml" do
     end
     
     it "should render a list of possible actions" do
-      pending 'Do some stuff'
-      rendered.should have_selector 'ul#actions' do |list|
-        list.should have_selector 'li.new-company', :text => 'Add a company'
+      render
+
+      rendered.should have_selector 'ul.actions' do |list|
+        list.should have_selector 'li.new-company', :content => 'Add a company'
       end
     end
   end
